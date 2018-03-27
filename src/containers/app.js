@@ -11,7 +11,7 @@ import {bind} from 'lodash-decorators';
 import {actions as locationActions, selectors as locationSelectors} from '../ducks/location';
 import {actions as storeActions, selectors as storeSelectors} from '../ducks/app';
 import {selectors as postSelectors} from '../ducks/posts';
-import {selectors as dynamicSelectors} from '../ducks/dynamic';
+import {actions as dynAct, selectors as dynamicSelectors} from '../ducks/dynamic';
 import {actions as dataActions, selectors as dataSelectors} from '../ducks/data';
 
 import routes from '../routes';
@@ -38,7 +38,8 @@ const mapDispatchToProps = dispatch => ({
 	actions: bindActionCreators({
 		...locationActions,
 		...storeActions,
-		...dataActions
+		...dataActions,
+		...dynAct
 	}, dispatch)
 });
 
@@ -87,6 +88,49 @@ class App extends Component {
 		// 	fetch: this.fetch
 		// });
 
+		console.log(this.props.actions);
+
+		this.props.actions.dynamicSet({
+			name: 'posts',
+			payload: 
+			{ 'psots' :
+				[
+					{
+					dataset: 'posts',
+					action: 'get',
+					title: 'This is a test title',
+					description: 'This is the test description'
+					},
+					{
+						dataset: 'posts2',
+						action: 'get',
+						title: 'This is a test title',
+						description: 'This is the test description'
+					}
+				]
+			}
+		});
+		
+		this.props.actions.dynamicSet({
+			name: 'posts',
+			payload: 
+			{ 'psots' :
+				[
+					{
+					dataset: 'posts2',
+					action: 'get',
+					title: 'This is a test title',
+					description: 'This is the test description'
+					},
+					{
+						dataset: 'posts5',
+						action: 'get',
+						title: 'This is a test title',
+						description: 'This is the test description'
+					}
+				]
+			}
+		});
 	}
 
 	displayInfo = posts => {
@@ -106,6 +150,7 @@ class App extends Component {
 		)	
 	}
 	displayInfoSlider = posts => {
+		console.log('pre firign');
 		console.log(posts);
 		return (
 			<div>
@@ -167,7 +212,7 @@ class App extends Component {
 					<a onClick={click(this.handleLinkClick, 'about')}>About</a>
 					<div id="wrap">
 						Its less blank
-						{/* {this.logReturnValue()} */}
+						{this.logReturnValue()}
 						{/* {this.logReturnValueSlider()} */}
 						{/* {renderRoutes(routes, {...this.props})} */}
 					</div>

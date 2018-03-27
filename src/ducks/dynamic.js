@@ -1,12 +1,23 @@
 import {fromJS} from 'immutable';
 import {createSelector} from 'reselect';
 
+import * as utils from '../utils/duckHelpers';
+import {dynTypes} from '../utils/dynamicHelpers';
+
 const initialState = fromJS([]);
 /*
 	DynamicReduer:
 	return a reducer function that can be branded
 	with whatever you want it to be renamed
 */
+export const types = duck => (
+	dynTypes(duck.name, 'SET')
+);
+
+export const actions = {
+	dynamicSet: obj => utils.action(types(obj), obj)
+};
+
 const dynamicReducer = renamed => (state = initialState, action) => {
 	console.log('dynamicReducer: Action');
 	console.log(action);
