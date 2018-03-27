@@ -166,7 +166,7 @@ class App extends Component {
 					<Link to="/">Home</Link>
 					<a onClick={click(this.handleLinkClick, 'about')}>About</a>
 					<div id="wrap">
-						Its blank
+						Its less blank
 						{/* {this.logReturnValue()} */}
 						{/* {this.logReturnValueSlider()} */}
 						{/* {renderRoutes(routes, {...this.props})} */}
