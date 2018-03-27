@@ -1,0 +1,35 @@
+.ml-accordion-container{
+	width:100%;
+	padding:30px;
+}
+
+.ml-accordion-container h3 {	
+	text-align: left;
+	padding: 25px 15px 25px 15px ;
+	height:67px;
+	margin:0;
+	cursor:pointer;
+	color:#0061A0;
+}
+
+.ml-accordion-header{
+	font-weight:700;
+	font-size:14px;
+	text-decoration:underline;
+	border-bottom:1px solid #999999;
+	background:url(/assets/patterns/img/tables/util-c_plus_16p.png) no-repeat right 5px center;
+}
+.expanded{
+	text-decoration:none;
+	background:url(/assets/patterns/img/tables/util-c_minus_16p.png) no-repeat right 5px center;
+	border-bottom:0px solid #999999;
+}
+.ml-accordion-container h3:first-child{
+	border-top:1px solid #999999;
+}
+
+.ml-accordion-content {
+	background:#ffffff;
+	border-bottom:1px solid #999999;
+	padding: 25px 15px 25px 15px ;
+}
