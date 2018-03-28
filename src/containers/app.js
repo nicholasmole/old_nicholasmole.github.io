@@ -18,9 +18,12 @@ import routes from '../routes';
 import './app.scss';
 import LoginCheck from './loginCheck';
 import renderEditorText from '../services/renderEditorText';
+import ifResponse from '../services/ifResponse';
 /* eslint-disable */
 
 import {unique, click} from '../utils/componentHelpers';
+
+import * as data from '../data/data';
 
 const mapStateToProps = state => ({
 	location: locationSelectors.getLocation(state),
@@ -30,6 +33,7 @@ const mapStateToProps = state => ({
 	//posts: dynamicSelectors.getDynamic(state,'posts'),
 	dposts: dynamicSelectors.getDynamic(state,'posts'),
 	dslider: dynamicSelectors.getDynamic(state,'sliders'),
+	dheaderTop: dynamicSelectors.getDynamic(state,'headerTop'),
 	//dposts: dynamicSelectors.getDynamic(state),
 	//dslider: dynamicSelectors.getDynamic(state),
 });
@@ -112,24 +116,8 @@ class App extends Component {
 		});
 		
 		this.props.actions.dynamicSet({
-			name: 'posts',
-			payload: 
-			{ 'psots' :
-				[
-					{
-					dataset: 'posts2',
-					action: 'get',
-					title: 'This is a test title',
-					description: 'This is the test description'
-					},
-					{
-						dataset: 'posts5',
-						action: 'get',
-						title: 'This is a test title',
-						description: 'This is the test description'
-					}
-				]
-			}
+			name: 'headerTop',
+			payload: data.headerTop 
 		});
 	}
 
@@ -168,6 +156,7 @@ class App extends Component {
 		)	
 	}
 
+
 	// This gets the api request and displays it in the log
 	logReturnValue() {
 
@@ -178,13 +167,16 @@ class App extends Component {
 		//console.log(this.props);
 		
 		if (typeof this.props.posts != 'undefined'){
-			console.log(this.props.dposts.toJS());
 			const responsetoJS = this.props.posts.toJS();
 			let {posts = []} = responsetoJS;
 			posts = responsetoJS.length ? responsetoJS : [];
 			response = posts.length ? posts.map(p => this.displayInfoSlider(p)) : <div>loading</div>
 		}
-		return response;
+
+		const valueToMap = ifResponse(this.props.dposts);
+		const response2 = valueToMap == null ? <div>loading</div> : valueToMap.map(p => this.displayInfoSlider(p));
+
+		return response2;
 	}
 	logReturnValueSlider() {
 
@@ -203,6 +195,29 @@ class App extends Component {
 		return response;
 	}
 
+	getHeaderTop = () => {
+
+		const valueToMap = ifResponse(this.props.dheaderTop);
+		const response = valueToMap == null ? <div>loading</div> : valueToMap.map(v => this.renderHeaderTop(v));
+		console.log(response);
+		return response;
+	}
+	renderHeaderTop = hTops => {
+		{console.log(hTops)}
+		return (
+			<div>
+				{hTops.map(hTop => {
+					
+					return (
+						<div key={hTop.id}>
+							<img src={`img/${hTop.src}`}/>
+						</div>
+					)
+				})}
+			</div>
+		)	
+	}
+
 	render() {
 		return (
 			<div id="app" className="app">
@@ -213,6 +228,7 @@ class App extends Component {
 					<div id="wrap">
 						Its less blank
 						{this.logReturnValue()}
+						{this.getHeaderTop()}
 						{/* {this.logReturnValueSlider()} */}
 						{/* {renderRoutes(routes, {...this.props})} */}
 					</div>

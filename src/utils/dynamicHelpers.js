@@ -7,7 +7,11 @@ export const dynamicSagas = [
 	/*
 	== Slider ==
 	Example Sliders */
-	'sliders'
+	'sliders',
+	/*
+	== HeaderTop ==
+	Top Slider Image */
+	'headerTop'
 ];
 
 export function dynTypes(duck, type) {
