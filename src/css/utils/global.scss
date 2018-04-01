@@ -1,12 +1,16 @@
 @import './variables.scss';
 @import './mixins.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 $purple: rgb(135, 140, 223);
 $green: rgb(153, 251, 198);
-
+*{
+	font-family: 'Open Sans', sans-serif;
+}
 body {
-	background-color: $purple;
-	color: $green;
+
+	background-color: #FFF;
+	color: #000;
 	font-size: 16px;
 	margin: 0;
 	height: 100vh;

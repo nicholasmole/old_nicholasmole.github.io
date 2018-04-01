@@ -18,7 +18,7 @@ import routes from '../routes';
 import './app.scss';
 import LoginCheck from './loginCheck';
 import renderEditorText from '../services/renderEditorText';
-import ifResponse from '../services/ifResponse';
+import ifResponse from '../services/responseGenerator';
 /* eslint-disable */
 
 import {unique, click} from '../utils/componentHelpers';
@@ -222,15 +222,14 @@ class App extends Component {
 		return (
 			<div id="app" className="app">
 				{/* <LoginCheck> */}
-				<h1>App Container</h1>
-					<Link to="/">Home</Link>
-					<a onClick={click(this.handleLinkClick, 'about')}>About</a>
+					{/* <Link to="/">Home</Link>
+					<a onClick={click(this.handleLinkClick, 'about')}>About</a> */}
 					<div id="wrap">
-						Its less blank
-						{this.logReturnValue()}
-						{this.getHeaderTop()}
+						{/* {this.logReturnValue()} */}
+						{/* {this.getHeaderTop()} */}
 						{/* {this.logReturnValueSlider()} */}
-						{/* {renderRoutes(routes, {...this.props})} */}
+						
+						{renderRoutes(routes, {...this.props})}
 					</div>
 				{/* </LoginCheck> */}
 			</div>

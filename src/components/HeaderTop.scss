@@ -1,0 +1,50 @@
+.headerTop{
+	height: 600px;
+	margin: -500px;
+	padding: 200px;
+	height: 600px;
+	height: 225%;
+	min-height: 1400px;
+	width: 200%;
+	min-width: 1800px;
+	background-position: left;
+	background-size: cover;
+	img{
+		width: 100%;
+	}
+	h1{
+		margin: 20% auto;
+    margin-left: -00px;
+    font-size: 10em;
+    padding: 0 100px;
+		color: #FFF;
+    background: #fae596;
+	}
+}
+.subtitle {
+	font-size: 7em;
+	margin-top: -351px;
+	margin-left: 300px;
+	padding: 0 100px;
+	color: #FFF;
+	background: #173e43;
+}
+.parallax {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+/*.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}*/
+.parallax__layer--base {
+  transform: translateZ(0);
+}
+.parallax__layer--back {
+  transform: translateZ(-1px);
+}

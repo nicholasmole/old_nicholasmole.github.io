@@ -1,4 +1,4 @@
-import Home from './components/home';
+import Home from './containers/home';
 import About from './components/about';
 
 export default [

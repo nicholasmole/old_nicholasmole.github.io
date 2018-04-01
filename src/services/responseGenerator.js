@@ -3,7 +3,7 @@ import React from 'react';
 /*
 	Return valueToMap or null
 */
-const ifResponse = value => {
+export default value => {
 	if (typeof value === 'undefined') {
 		return null;
 	} else {
@@ -14,5 +14,3 @@ const ifResponse = value => {
 		return response;
 	}
 };
-
-export default ifResponse;
