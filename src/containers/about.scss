@@ -1,3 +1,4 @@
+@import "../css/utils/variables.scss";
 .Aboutsection {
 	padding: 25px;
 }
@@ -14,13 +15,59 @@
 	}
 }
 .Title {
-	padding: 20px;
-	font-size: 47px;
+	padding: 10px 20px;
+	font-size: 67px;
+	font-weight: bold;
 }
-.about_div{
-	font-size: 21px;
-    width: 80%;
-    line-height: 42px;
-    padding: 14px;
-    margin: 0 auto;
+.about_div {
+	font-size: 18px;
+	width: 100%;
+	line-height: 42px;
+	padding: 14px;
+	margin: 0 auto;
+}
+.about_click{
+	border: 2px solid white;
+    border-radius: 8px;
+    width: 150px;
+    font-size: 20px;
+    padding: 8px 5px;
+	transition: all 0.5s, margin 0.1s;
+	margin: 0 auto;
+}
+.img_container{
+	padding: 20px;
+	img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+	}
+}
+.about_click:hover{
+	color: $myBlue;
+	background: $myWhite;
+}
+.about_click:active{
+	margin-top: 4px;
+}
+.about_click_outer{
+	padding-bottom: 8px;
+	transition: all 0.5s, margin 0.1s;
+}
+.about_click_outer:active {
+	padding-bottom: 0px;
+}
+.about_click:hover{
+	color: $myBlue !important;
+}
+@media (min-width: 600px) {
+	.img_container img{
+		float: left;
+	}
+	.about_div {
+		width: 80%;
+	}
+}
+@media (max-width: 600px) {
+	
 }

@@ -1,0 +1,54 @@
+@import "../css/utils/variables.scss";
+
+.ProjectSection {
+	background: $myWhite;
+	text-align: center;
+	color: $myBlue;
+}
+.contain_projects {
+	text-align: center;
+	padding: 50px;
+}
+.proj_img{
+	text-align: center;
+	padding: 20px 0px;
+	img {
+		border: 8px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 300px;
+		/* margin: 50px;*/
+		margin-bottom: 0px;
+	}
+	img:after {
+    content: " ";
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    background: green;
+	}
+}
+.proj_title{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.bottom_screen_img{
+	display: block;
+	width: 300px;
+	height: 30px;
+	background: rgb(203,203,203);
+	box-shadow: inset 5px -5px 5px rgba(0,0,0,0.1);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	margin: 0 auto;
+}
+
+@media (min-width: 600px){
+	.contain_projects {
+    text-align: center;
+    width: 50%;
+    display: inline-block;
+	}
+}

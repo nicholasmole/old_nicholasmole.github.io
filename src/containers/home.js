@@ -26,6 +26,9 @@ import * as data from '../data/data';
 import HeaderTop from '../components/HeaderTop';
 import LoadingElement from '../components/loader';
 import About from './aboutSection';
+import Projects from './projects';
+import Skills from './skills';
+import Contact from './contact';
 import Statistics from './statistics';
 import './about.scss';
 
@@ -33,7 +36,8 @@ import './about.scss';
 const mapStateToProps = state => ({
 	location: locationSelectors.getLocation(state),
 	status: storeSelectors.getStatus(state),
-	dheaderTop: dynamicSelectors.getDynamic(state,'headerTop')
+	dheaderTop: dynamicSelectors.getDynamic(state,'headerTop'),
+	dprojectStuff: dynamicSelectors.getDynamic(state,'projectStuff'),
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -72,6 +76,11 @@ class HomePage extends Component {
 			name: 'headerTop',
 			payload: data.headerTop 
 		});
+		
+		this.props.actions.dynamicSet({
+			name: 'projectStuff',
+			payload: data.projectStuff 
+		});
 	} 
 
 	getHeaderTop = () => {
@@ -79,6 +88,15 @@ class HomePage extends Component {
 		
 		const response = valueToMap == null ? 
 		<LoadingElement divClass="centerLoading"/> : valueToMap.map(v => <HeaderTop props={v}/>)
+		;
+		
+		return response;
+	}
+	getProjectStuff = () => {
+		const valueToMap = responseGenerator(this.props.dprojectStuff);
+		
+		const response = valueToMap == null ? 
+		<LoadingElement divClass="centerLoading"/> : valueToMap.map(v => <Projects props={v}/>)
 		;
 		
 		return response;
@@ -101,18 +119,21 @@ class HomePage extends Component {
 	render() {
 		return (
 			<div>
-				<div id="app" className="app parallax">
+				<div id="app" className="app">
 					{this.getHeaderTop()}
-					<div className=" parallax__layer parallax__layer--base" style={{backgroundColor:'#3fb0ac',height: '400px'}}>
+					<div className=" " style={{backgroundColor:'#3fb0ac'}}>
 						<About/>
 					</div>
-					{/* <div>
-						
-					</div> */}
+					<div className="ProjectSection">
+						<div className="Title"> Projects </div>
+						{this.getProjectStuff()}
+					</div>
+					<Skills/>
+					<Contact/>
 					
 					{renderRoutes(this.props.route.routes)}
 				</div>
-				<Statistics/>
+				{/* <Statistics/> */}
 			</div>
 		);
 	}

@@ -11,7 +11,11 @@ export const dynamicSagas = [
 	/*
 	== HeaderTop ==
 	Top Slider Image */
-	'headerTop'
+	'headerTop',
+	/*
+	== Projects ==
+	Top Project Image */
+	'projectStuff'
 ];
 
 export function dynTypes(duck, type) {

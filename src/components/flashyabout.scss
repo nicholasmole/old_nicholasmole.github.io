@@ -1,0 +1,84 @@
+@mixin flute(){
+	z-index: 15;
+	position: fixed;
+	width: 75px;
+	height: 80px;
+	content: " ";
+	background: yellow;
+	border-top-left-radius: 75%;
+	border-bottom-left-radius: 50%;
+
+}
+@mixin fluteBefore(){
+	z-index: -10;
+	display: block;
+	content: " ";
+	width: 2500px;
+	height: 80px;
+	background: rgba(255,255,255,0.25);
+}
+.flute::before {
+	@include fluteBefore;
+	transform: rotateX(45deg);
+}
+.flute {
+	@include flute;
+}
+.left_flute {
+	bottom: -25px;
+	left: -25px;
+	-webkit-transform: rotateZ(0deg) rotateX(45deg) rotateY(45deg);
+	transform: rotateZ(-74deg) rotateX(45deg) rotateY(45deg);
+	animation: rotateFlute 4.3s alternate-reverse infinite;
+}
+.right_flute {
+	bottom: -25px;
+	right: -25px;
+	// -webkit-transform: rotateZ(0deg) rotateX(45deg) rotateY(45deg);
+	// transform: rotateZ(74deg) rotateX(45deg) rotateY(45deg);
+	animation: rotateFluteRight 4.3s alternate-reverse infinite;
+}
+
+@keyframes rotateFlute {
+	from { transform: rotateZ(-99deg) rotateX(0deg) rotateY(45deg); }
+	to   { transform: rotateZ(0deg) rotateX(0deg) rotateY(45deg); }
+}
+@keyframes rotateFluteRight {
+	from { transform: rotateZ(276deg) rotateX(0deg) rotateY(45deg); }
+	to   { transform: rotateZ(180deg) rotateX(0deg) rotateY(45deg); }
+}
+
+@mixin floating_thing(){
+	z-index: 15;
+	position: fixed;
+	width: 75px;
+	height: 75px;
+	content: " ";
+	background: yellow;
+	animation: thing1spin 4.3s linear infinite;
+}
+.floating_thing{
+	@include floating_thing;
+}
+.twist1{
+	top: 155px;
+	left: 75px;
+}
+.twist2{
+	top: 255px;
+	left: 95px;
+}
+.twist3{
+	top: 455px;
+	left: 115px;
+}
+.twist4{
+	top: 15px;
+	left: 95px;
+}
+
+
+@keyframes thing1spin {
+	from { transform: rotateZ(45deg) rotateX(-90deg) rotateY(-90deg); }
+	to   { transform: rotateZ(45deg) rotateX(90deg) rotateY(90deg); }
+}

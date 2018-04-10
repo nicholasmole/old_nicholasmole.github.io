@@ -1,0 +1,27 @@
+@import "../css/utils/variables.scss";
+
+.SkillSection{
+	padding: 40px 20px;
+	text-align: center;
+	color: $myWhite;
+	background: $myBlue;
+	hr{ 
+		border-color: #fff !important;
+    background: #FFF;
+    width: 50%;
+	}
+	li {
+		display: inline;
+		font-size: 24px;
+		padding: 20px;
+		transition: 1s all;
+	}
+	li:hover {
+		font-size: 28px;
+		font-weight: bold;
+		color: $myRed;
+	}
+}
+.Skill_inner {
+	padding: 38px;
+}
