@@ -25,3 +25,11 @@
 .Skill_inner {
 	padding: 38px;
 }
+
+@media (max-width: 600px){
+	.SkillSection li{
+		display: block;
+		padding: 6px;
+	}
+
+}

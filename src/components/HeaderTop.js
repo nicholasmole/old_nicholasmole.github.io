@@ -25,7 +25,7 @@ export default x => {
 						{/* <img src={`img/${prop.src}`}/> */}
 						<h1>Make a site with <span>{prop.title}</span></h1>
 						<div className="header_text">Lets make it go fast. </div>
-						<div className="header_text">And with more flashy light!</div>
+						<div className="header_text">Without breaking the budget.</div>
 						<div className="header_text jump_tabs">
 							<a href="#about">ABOUT</a>
 							<a href="#project">PROJECTS</a>

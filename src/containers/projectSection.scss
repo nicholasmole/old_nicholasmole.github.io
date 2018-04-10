@@ -6,12 +6,26 @@
 	color: $myBlue;
 }
 .contain_projects {
+	transition: 1s all;
 	text-align: center;
 	padding: 50px;
+	a {
+		color: $myBlue !important;
+		text-decoration: none !important;
+	}
+}
+.contain_projects:hover {
+	transform: scale(1.1);
+}
+.proj_desc{
+	color: $myBlue !important;
+	text-decoration: none !important;
 }
 .proj_img{
 	text-align: center;
 	padding: 20px 0px;
+	color: $myBlue !important;
+	text-decoration: none !important;
 	img {
 		border: 8px solid black;
     border-top-left-radius: 10px;
@@ -32,6 +46,8 @@
 .proj_title{
 	font-size: 20px;
 	font-weight: bold;
+	color: $myBlue !important;
+	text-decoration: none !important;
 }
 
 .bottom_screen_img{
