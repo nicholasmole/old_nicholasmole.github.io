@@ -2,7 +2,7 @@ import React from 'react';
 import './skillsSection.scss';
 
 export default () => (
-	<div className="SkillSection">
+	<div id="skills" className="SkillSection">
 		<div className="Title"> Skills </div>
 		<hr/>
 		<div className="Skill_inner">

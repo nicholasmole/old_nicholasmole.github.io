@@ -27,10 +27,10 @@ export default x => {
 						<div className="header_text">Lets make it go fast. </div>
 						<div className="header_text">And with more flashy light!</div>
 						<div className="header_text jump_tabs">
-							<a>ABOUT</a>
-							<a>PROJECTS</a>
-							<a>SKILLS</a>
-							<a>CONTACT</a>
+							<a href="#about">ABOUT</a>
+							<a href="#project">PROJECTS</a>
+							<a href="#skills">SKILLS</a>
+							<a href="#contact">CONTACT</a>
 						</div>
 					</div>
 				);

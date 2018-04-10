@@ -2,7 +2,7 @@ import React from 'react';
 import FlashyAbout from '../components/flashyabout';
 
 const About = () => (
-	<div className="Aboutsection">
+	<div id="about" className="Aboutsection">
 		<div className="Title"> About me </div>
 		<hr/>
 		<div className="img_container">

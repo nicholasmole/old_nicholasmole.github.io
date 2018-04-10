@@ -2,7 +2,7 @@ import React from 'react';
 import './contactSection.scss';
 
 export default () => (
-	<div className="ContactSection">
+	<div id="contact" className="ContactSection">
 		<div className="Title"> Contact </div>
 		<a className="linkedin" href="https://www.linkedin.com/in/nicholas-mole/"></a>
 		<a className="github" href="https://github.com/nicholasmole"></a>

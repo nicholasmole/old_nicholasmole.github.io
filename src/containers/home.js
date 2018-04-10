@@ -124,7 +124,7 @@ class HomePage extends Component {
 					<div className=" " style={{backgroundColor:'#3fb0ac'}}>
 						<About/>
 					</div>
-					<div className="ProjectSection">
+					<div id="project" className="ProjectSection">
 						<div className="Title"> Projects </div>
 						{this.getProjectStuff()}
 					</div>
