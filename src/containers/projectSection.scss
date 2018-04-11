@@ -65,6 +65,12 @@
 	.contain_projects {
     text-align: center;
     width: 50%;
-    display: inline-block;
+		display: inline-block;
+		padding: 0px;
+	}
+}
+@media (max-width: 600px){
+	.contain_projects {
+		padding: 0px;
 	}
 }
