@@ -222,3 +222,28 @@
 		}
 	}
 }
+.hide_text {
+	height: 40px;
+	overflow: hidden;
+}
+.header_text{
+	.word {
+		display: block;
+		position: relative;
+		top: 0px;
+		padding-bottom: 10px;
+		animation: overFlowText 7.0s linear infinite;
+	}
+}
+
+@keyframes overFlowText {
+	0%{ top: 0px;} 
+	20%{ top: 0px;} 
+	25%{ top: -40px;} 
+	45%{ top: -40px;} 
+	50%{ top: -80px;} 
+	70%{ top: -80px;} 
+	75%{ top: -120px;} 
+	95%{ top: -120px;} 
+	100%{ top: 0px;} 
+}
