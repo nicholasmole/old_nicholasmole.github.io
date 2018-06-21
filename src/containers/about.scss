@@ -1,4 +1,8 @@
 @import "../css/utils/variables.scss";
+.about_home_container {
+	background-image: url('/img/outside_bw_sea.jpg');
+	background-size: cover ;
+}
 .Aboutsection {
 	padding: 25px;
 }

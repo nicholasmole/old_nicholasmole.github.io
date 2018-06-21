@@ -1,7 +1,8 @@
 @import "../css/utils/variables.scss";
 
 .ProjectSection {
-	background: $myWhite;
+	background-image: url('/img/just_a_desk.jpeg');
+	background-size: cover;
 	text-align: center;
 	color: $myBlue;
 }

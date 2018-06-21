@@ -121,7 +121,7 @@ class HomePage extends Component {
 			<div>
 				<div id="app" className="app">
 					{this.getHeaderTop()}
-					<div className=" " style={{backgroundColor:'#3fb0ac'}}>
+					<div className="about_home_container">
 						<About/>
 					</div>
 					<div id="project" className="ProjectSection">

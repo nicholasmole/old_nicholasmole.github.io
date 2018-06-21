@@ -138,17 +138,19 @@
 	background-position: left;
 	background-size: cover;
 	padding-top: 200px;
+	background-image: url('/img/At_the_desk.jpeg');
+	text-shadow: -1px -1px 1px rgba(255,255,255,1), 1px 1px 1px rgba(255,255,255,1);
 	img{
 		width: 100%;
 	}
 	.header_text{
-		color: $myWhite;
+		color: $myBlack;
 		padding-left: 200px;
 		line-height: 32px;
 		font-size: 28px;
 	}
 	h1 {
-		color: $myWhite;
+		color: $myBlack;
 		padding-left: 200px;
 		span{
 			z-index: 10;
@@ -197,13 +199,13 @@
 	a {
     padding: 0px 10px;
 		transition: 0.5s color;
-		color: white !important;
+		color: $myRed !important;
 		text-decoration: none !important;
 	}
 	a:hover {
     color: $myRed;
     border-bottom: 2px solid;
-    border-bottom-color: white;
+    border-bottom-color: $myRed;
 	}
 }
 .about_jump{
